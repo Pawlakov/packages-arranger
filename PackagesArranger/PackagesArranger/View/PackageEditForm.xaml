@@ -1,0 +1,24 @@
+﻿<Window x:Class="PackagesArranger.View.PackageEditForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Edit Package" SizeToContent="WidthAndHeight" ResizeMode="CanMinimize">
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <TextBlock Text="{Binding NameText}"/>
+            <TextBox Text="{Binding NameField, UpdateSourceTrigger=PropertyChanged}" MaxLength="16" Width="200"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <TextBlock Text="{Binding FirstDimensionText}"/>
+            <TextBox Text="{Binding FirstDimensionField, UpdateSourceTrigger=PropertyChanged}" MaxLength="4" Width="200"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <TextBlock Text="{Binding SecondDimensionText}"/>
+            <TextBox Text="{Binding SecondDimensionField, UpdateSourceTrigger=PropertyChanged}" MaxLength="4" Width="200"/>
+        </StackPanel>
+        <Button Content="Submit changes" Command="{Binding SubmitChangesCommand}"/>
+        <Button Content="Cancel" Command="{Binding CancelCommand}"/>
+    </StackPanel>
+</Window>
